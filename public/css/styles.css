@@ -55,7 +55,18 @@ nav ul {
   display: flex;
   justify-content: space-around;
   list-style: none;
+  padding: 0;
+}
+
+nav li {
+  text-align: center;
   padding: 0.5rem;
+  cursor: pointer;
+}
+
+nav li:hover {
+  background-color: var(--main-color);
+  color: var(--secondary-color);
 }
 
 #hero {
@@ -92,6 +103,11 @@ button {
   border: 0.25rem outset white;
   padding: 1rem 2rem;
   font-weight: 900;
+}
+
+button:hover {
+  border-color: var(--secondary-color);
+  color: white;
 }
 
 #hero img {

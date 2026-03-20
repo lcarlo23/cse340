@@ -29,6 +29,9 @@ app.use(static);
 // Index route
 app.get("/", utilities.handleErrors(baseController.buildHome));
 
+// Footer error link
+app.get("/footer-error", utilities.handleErrors(baseController.throwError));
+
 // Inventory routes
 app.use("/inv", inventoryRoute);
 

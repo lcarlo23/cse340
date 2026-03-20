@@ -77,6 +77,25 @@ Util.buildClassificationGrid = async function (data) {
   return grid;
 };
 
+/* **************************************
+ * Build the detail view HTML
+ * ************************************ */
+Util.buildDetailWrapper = async function (data) {
+  let wrapper;
+  wrapper = `<div class="detail-wrapper">
+    <img src="${data.inv_image}"
+      alt="Image of ${data.inv_make} ${data.inv_model} on CSE Motors" />
+      <div class="vehicle-details">
+        <h2>${data.inv_make} ${data.inv_model} Details</h2>
+        <p class="price">Price: $${new Intl.NumberFormat("en-US").format(data.inv_price)}</p>
+        <p class="description"><b>Details:</b> ${data.inv_description}</p>
+        <p class="color"><b>Color:</b> ${data.inv_color}</p>
+        <p class="color"><b>Miles:</b> ${data.inv_miles.toLocaleString("en-US")}</p>
+      </div>
+    </div>`;
+  return wrapper;
+};
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for

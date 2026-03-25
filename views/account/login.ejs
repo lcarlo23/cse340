@@ -8,9 +8,10 @@
 
 <form class="login-form">
     <label for="email">Email:</label>
-    <input type="email" name="account_email" id="email" />
+    <input type="email" name="account_email" id="email" required />
     <label for="password">Password:</label>
-    <input type="password" name="account_password" id="password" />
+    <input type="password" name="account_password" id="password" required />
+    <span>Passwords must be at least 12 characters and contain at least 1 number, 1 capital letter and 1 special character</span>
     <button>LOGIN</button>
     <p>No account? <a href="/account/registration">Sign-up</a></p>
 </form>

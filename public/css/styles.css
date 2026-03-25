@@ -249,6 +249,11 @@ button:hover {
   padding: 0.5rem;
 }
 
+.login-form span {
+  font-size: 0.75rem;
+  color: red;
+}
+
 /* MOBILE STYLE */
 
 @media screen and (max-width: 50rem) {

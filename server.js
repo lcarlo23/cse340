@@ -6,15 +6,16 @@
  * Require Statements
  *************************/
 const express = require("express");
+const expressLayouts = require("express-ejs-layouts");
+const session = require("express-session");
+const bodyParser = require("body-parser");
 const env = require("dotenv").config();
 const app = express();
 const static = require("./routes/static");
 const inventoryRoute = require("./routes/inventoryRoute");
 const accountRoute = require("./routes/accountRoute");
-const expressLayouts = require("express-ejs-layouts");
 const baseController = require("./controllers/baseController");
 const utilities = require("./utilities/");
-const session = require("express-session");
 const pool = require("./database/");
 
 /* ***********************
@@ -46,6 +47,9 @@ app.use(function (req, res, next) {
   res.locals.messages = require("express-messages")(req, res);
   next();
 });
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
 /* ***********************
  * Routes

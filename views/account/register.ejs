@@ -6,7 +6,7 @@
 
 <%- messages() %>
 
-<form class="login-form">
+<form class="login-form" action="/account/register" method="post">
   <label for="first-name">First Name:</label>
   <input type="text" name="account_firstname" id="first-name" required/>
   <label for="last-name">Last Name:</label>
@@ -14,6 +14,6 @@
   <label for="email">Email Address:</label>
   <input type="email" name="account_email" id="email" required/>
   <label for="password">Password:</label>
-  <input type="password" name="account_password" id="password" required minlength="12" pattern="(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+]).*"/>
+  <input type="password" name="account_password" id="password" required minlength="12"/>
   <button>REGISTER</button>
 </form>

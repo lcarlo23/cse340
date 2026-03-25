@@ -6,5 +6,11 @@
 
 <%- messages() %>
 
-<%- form %>
-
+<form class="login-form">
+    <label for="email">Email:</label>
+    <input type="email" name="account_email" id="email" />
+    <label for="password">Password:</label>
+    <input type="password" name="account_password" id="password" />
+    <button>LOGIN</button>
+    <p>No account? <a href="/account/registration">Sign-up</a></p>
+</form>

@@ -96,41 +96,6 @@ Util.buildDetailWrapper = async function (data) {
   return wrapper;
 };
 
-/* **************************************
- * Build the login view HTML
- * ************************************ */
-Util.buildLoginForm = async function () {
-  let form;
-  form = `<form class="login-form">
-  <label for="email">Email:</label>
-  <input type="email" name="account_email" id="email"/>
-  <label for="password">Password:</label>
-  <input type="password" name="account_password" id="password"/>
-  <button>LOGIN</button>
-  <p>No account? <a href="/account/registration">Sign-up</a></p>
-  </form>`;
-  return form;
-};
-
-/* **************************************
- * Build the register view HTML
- * ************************************ */
-Util.buildRegisterForm = async function () {
-  let form;
-  form = `<form class="login-form">
-  <label for="first-name">First Name:</label>
-  <input type="text" name="account_firstname" id="first-name" required/>
-  <label for="last-name">Last Name:</label>
-  <input type="text" name="account_lastname" id="last-name" required/>
-  <label for="email">Email Address:</label>
-  <input type="email" name="account_email" id="email" required/>
-  <label for="password">Password:</label>
-  <input type="password" name="account_password" id="password" required minlength="12" pattern="(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+]).*"/>
-  <button>REGISTER</button>
-  </form>`;
-  return form;
-};
-
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for

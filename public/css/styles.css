@@ -226,7 +226,7 @@ button:hover {
   width: 100%;
 }
 
-/* LOGIN VIEW */
+/* LOGIN/REGISTER VIEW */
 .login-form {
   display: flex;
   flex-direction: column;
@@ -243,6 +243,10 @@ button:hover {
 .login-form label {
   font-weight: 700;
   margin-top: 0.5rem;
+}
+
+.login-form input {
+  padding: 0.5rem;
 }
 
 /* MOBILE STYLE */

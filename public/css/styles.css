@@ -108,6 +108,7 @@ button {
   border: 0.25rem outset white;
   padding: 1rem 2rem;
   font-weight: 900;
+  cursor: pointer;
 }
 
 button:hover {
@@ -223,6 +224,25 @@ button:hover {
 
 .vehicle-details {
   width: 100%;
+}
+
+/* LOGIN VIEW */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 20rem;
+  margin: auto;
+}
+
+.login-form button,
+.login-form p {
+  margin-top: 1rem;
+  align-self: center;
+}
+
+.login-form label {
+  font-weight: 700;
+  margin-top: 0.5rem;
 }
 
 /* MOBILE STYLE */

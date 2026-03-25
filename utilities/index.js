@@ -96,6 +96,22 @@ Util.buildDetailWrapper = async function (data) {
   return wrapper;
 };
 
+/* **************************************
+ * Build the login view HTML
+ * ************************************ */
+Util.buildLoginForm = async function () {
+  let form;
+  form = `<form class="login-form">
+  <label for="email">Email:</label>
+  <input type="email" name="account_email" id="email"/>
+  <label for="password">Password:</label>
+  <input type="password" name="account_password" id="password"/>
+  <button>LOGIN</button>
+  <p>No account? <a href="">Sign-up</a></p>
+  </form>`;
+  return form;
+};
+
 /* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for

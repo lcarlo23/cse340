@@ -1,0 +1,40 @@
+<% if (title) { %>
+    <h1>
+        <%= title %>
+    </h1>
+<% } else { res.redirect('/') } %>
+
+<%- messages() %>
+
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
+
+<form action="/inv/inventory" method="post">
+    <p>ALL FIELDS ARE REQUIRED</p>
+    <label for="classificationList">Classification</label>
+    <%- classification %>
+    <label for="make">Make</label>
+    <input type="text" required placeholder="Min of 3 characters" minlength="3" name="inv_make" id="make" value="<%= locals.inv_make %>">
+    <label for="model">Model</label>
+    <input type="text" required placeholder="Min of 3 characters" minlength="3" name="inv_model" id="model" value="<%= locals.inv_model %>" >
+    <label for="description">Description</label>
+    <textarea required name="inv_description" id="description" rows="6"><%= locals.inv_description %></textarea>
+    <label for="image">Image Path</label>
+    <input type="text" required value="/images/vehicles/no-image.png" name="inv_image" id="image" value="<%= locals.inv_image %>">
+    <label for="thumbnail">Thumbnail Path</label>
+    <input type="text" required value="/images/vehicles/no-image-tn.png" name="inv_thumbnail" id="thumbnail" value="<%= locals.inv_thumbnail %>">
+    <label for="price">Price</label>
+    <input type="number" required placeholder="decimal or integer" name="inv_price" id="price" value="<%= locals.inv_price %>">
+    <label for="year">Year</label>
+    <input type="number" required placeholder="4-digit year" name="inv_year" id="year" min="1900" max="2100" value="<%= locals.inv_year %>">
+    <label for="miles">Miles</label>
+    <input type="number" required placeholder="digits only" name="inv_miles" id="miles" value="<%= locals.inv_miles %>">
+    <label for="color">Color</label>
+    <input type="text" required minlength="3" name="inv_color" id="color" value="<%= locals.inv_color %>">
+    <button>Add Vehicle</button>
+</form>

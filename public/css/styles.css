@@ -28,6 +28,17 @@ body {
   padding: 0.5rem;
 }
 
+ul {
+  list-style: none;
+}
+
+.notice {
+  font-style: italic;
+  font-weight: 700;
+  color: rgb(180, 0, 0);
+  list-style-type: disclosure-closed;
+}
+
 header,
 nav {
   font-family: "Inter", sans-serif;
@@ -53,8 +64,8 @@ nav ul {
   background-color: var(--secondary-color);
   color: white;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-around;
-  list-style: none;
   padding: 0;
 }
 
@@ -96,7 +107,6 @@ h2 {
 }
 
 #hero ul {
-  list-style: none;
   padding-left: 0;
   font-family: "Inter", serif;
   font-size: 1.25rem;
@@ -181,7 +191,6 @@ button:hover {
 }
 
 #inv-display li {
-  list-style-type: none;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -227,31 +236,44 @@ button:hover {
 }
 
 /* LOGIN/REGISTER VIEW */
-.login-form {
+form {
   display: flex;
   flex-direction: column;
-  max-width: 20rem;
+  max-width: 30rem;
   margin: auto;
+  background-color: #a7f0ff;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 
-.login-form button,
-.login-form p {
+form button,
+form p {
   margin-top: 1rem;
   align-self: center;
 }
 
-.login-form label {
+form label {
   font-weight: 700;
   margin-top: 0.5rem;
 }
 
-.login-form input {
+form input,
+form select,
+form textarea {
   padding: 0.5rem;
 }
 
-.login-form span {
+form *:valid:focus:not(button) {
+  background-color: rgb(170, 255, 170);
+}
+
+form *:invalid:focus:not(button) {
+  background-color: rgb(255, 170, 170);
+}
+
+form span {
   font-size: 0.75rem;
-  color: red;
+  color: rgb(180, 0, 0);
 }
 
 /* MOBILE STYLE */

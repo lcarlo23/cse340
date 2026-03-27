@@ -12,7 +12,7 @@ validate.classificationRules = () => {
       .trim()
       .escape()
       .notEmpty()
-      .isLength({ min: 1 })
+      .withMessage("The filed cannot be empty.")
       .isAlpha()
       .withMessage("Provide a correct classification name.")
       .custom(async (classification_name) => {

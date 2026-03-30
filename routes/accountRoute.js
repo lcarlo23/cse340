@@ -31,6 +31,10 @@ router.post(
 );
 
 // Route to build account management
-router.get("/", utilities.handleErrors(accountController.buildAccount));
+router.get(
+  "/",
+  utilities.checkLogin,
+  utilities.handleErrors(accountController.buildAccount),
+);
 
 module.exports = router;

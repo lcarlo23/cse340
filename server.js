@@ -17,6 +17,7 @@ const accountRoute = require("./routes/accountRoute");
 const baseController = require("./controllers/baseController");
 const utilities = require("./utilities/");
 const pool = require("./database/");
+const cookieParser = require("cookie-parser");
 
 /* ***********************
  * View Engine and Templates
@@ -40,6 +41,7 @@ app.use(
     name: "sessionId",
   }),
 );
+app.use(cookieParser());
 
 // Express Messages Middleware
 app.use(require("connect-flash")());

@@ -107,14 +107,7 @@ validate.loginRules = () => {
         minNumbers: 1,
         minSymbols: 1,
       })
-      .withMessage("Password does not meet requirements.")
-      .custom(async (account_password) => {
-        const passwordCorrect =
-          await accountModel.checkPassword(account_password);
-        if (!passwordCorrect) {
-          throw new Error("The password is incorrect. Try again.");
-        }
-      }),
+      .withMessage("Password does not meet requirements."),
   ];
 };
 

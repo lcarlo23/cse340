@@ -14,7 +14,7 @@
  </ul>
 <% } %>
 
-<form action="/inv/inventory" method="post">
+<form action="/inv/update" method="post" id="updateForm">
     <p>ALL FIELDS ARE REQUIRED</p>
     <label for="classificationList">Classification</label>
     <%- classification %>
@@ -27,7 +27,7 @@
     <label for="image">Image Path</label>
     <input type="text" required value="<%= locals.inv_image || '/images/vehicles/no-image.png' %>" name="inv_image" id="image">
     <label for="thumbnail">Thumbnail Path</label>
-    <input type="text" required value="<%= locals.inv_thumbnail || '/images/vehicles/no-image-tn.png'%>" name="inv_thumbnail" id="thumbnail" >
+    <input type="text" required value="<%= locals.inv_thumbnail || '/images/vehicles/no-image-tn.png'%>" name="inv_thumbnail" id="thumbnail">
     <label for="price">Price</label>
     <input type="number" required placeholder="decimal or integer" name="inv_price" id="price" value="<%= locals.inv_price %>">
     <label for="year">Year</label>
@@ -36,5 +36,10 @@
     <input type="number" required placeholder="digits only" name="inv_miles" id="miles" value="<%= locals.inv_miles %>">
     <label for="color">Color</label>
     <input type="text" required minlength="3" name="inv_color" id="color" value="<%= locals.inv_color %>">
-    <button>Add Vehicle</button>
+    <button disabled>Update Vehicle</button>
+    <input type="hidden" name="inv_id"
+    <% if(locals.inv_id) { %> value="<%= locals.inv_id %>"
+    <% } %>>
 </form>
+
+<script src="/js/inv-update.js"></script>

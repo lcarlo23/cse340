@@ -257,9 +257,9 @@ form label {
   margin-top: 0.5rem;
 }
 
-form input,
-form select,
-form textarea {
+input,
+select,
+textarea {
   padding: 0.5rem;
 }
 

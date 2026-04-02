@@ -157,6 +157,28 @@ Util.checkLogin = (req, res, next) => {
 };
 
 /* ****************************************
+ *  Check Account Type
+ * ************************************ */
+Util.checkAccountType = (req, res, next) => {
+  const accountData = res.locals.accountData;
+
+  if (!accountData) {
+    req.flash("notice", "Please log in.");
+    return res.redirect("/account/login");
+  }
+
+  if (
+    accountData.account_type == "Employee" ||
+    accountData.account_type == "Admin"
+  ) {
+    next();
+  } else {
+    req.flash("notice", "You do not have permission to access this area.");
+    return res.redirect("/account/login");
+  }
+};
+
+/* ****************************************
  * Middleware For Handling Errors
  * Wrap other function in this for
  * General Error Handling

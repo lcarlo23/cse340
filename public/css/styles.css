@@ -53,6 +53,7 @@ header {
 header a {
   text-decoration: none;
   color: var(--secondary-color);
+  margin-left: 2rem;
 }
 
 .siteName a {
@@ -118,12 +119,12 @@ button {
   border: 0.25rem outset white;
   padding: 1rem 2rem;
   font-weight: 900;
-  cursor: pointer;
 }
 
-button:hover {
+button:hover:not(:disabled) {
   border-color: var(--secondary-color);
   color: white;
+  cursor: pointer;
 }
 
 #hero img {

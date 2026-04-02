@@ -18,26 +18,37 @@ router.get(
 );
 
 // Route to build vehicle management view
-router.get("/", utilities.handleErrors(invController.buildManagement));
+router.get(
+  "/",
+  utilities.checkAccountType,
+  utilities.handleErrors(invController.buildManagement),
+);
 
 // Route to build add classification form
 router.get(
   "/classification",
+  utilities.checkAccountType,
   utilities.handleErrors(invController.buildClassification),
 );
 
 router.post(
   "/classification",
+  utilities.checkAccountType,
   invValidate.classificationRules(),
   invValidate.checkClassificationData,
   utilities.handleErrors(invController.addClassification),
 );
 
 // Route to build inventory form
-router.get("/inventory", utilities.handleErrors(invController.buildInventory));
+router.get(
+  "/inventory",
+  utilities.checkAccountType,
+  utilities.handleErrors(invController.buildInventory),
+);
 
 router.post(
   "/inventory",
+  utilities.checkAccountType,
   invValidate.vehicleRules(),
   invValidate.checkVehicleData,
   utilities.handleErrors(invController.addVehicle),
@@ -45,18 +56,21 @@ router.post(
 
 router.get(
   "/getInventory/:classification_id",
+  utilities.checkAccountType,
   utilities.handleErrors(invController.getInventoryJSON),
 );
 
 // Route to edit inventory form
 router.get(
   "/edit/:inventory_id",
+  utilities.checkAccountType,
   utilities.handleErrors(invController.editInventory),
 );
 
 // Route to edit inventory form
 router.post(
   "/update/",
+  utilities.checkAccountType,
   invValidate.vehicleRules(),
   invValidate.checkUpdateData,
   utilities.handleErrors(invController.updateInventory),
@@ -65,12 +79,14 @@ router.post(
 // Route to edit inventory form
 router.get(
   "/delete/:inventory_id",
+  utilities.checkAccountType,
   utilities.handleErrors(invController.buildDeleteView),
 );
 
 // Route to edit inventory form
 router.post(
   "/delete/",
+  utilities.checkAccountType,
   utilities.handleErrors(invController.deleteInventoryItem),
 );
 
